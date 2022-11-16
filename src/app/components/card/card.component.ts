@@ -1,7 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Post } from '../../interfaces/post.interface';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
+import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-card',
@@ -14,22 +16,17 @@ export class CardComponent implements OnInit {
   userInitials?: string;
   author?: string;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private matDialog: MatDialog) {}
+
   ngOnInit() {
     if (this.post) {
       this.userService.getUser(this.post.userId).subscribe((user) => {
         this.user = user;
         this.getUserInitials(this.user.name);
-        this.getAuthor();
+        this.author = this.user.name;
       });
     } else {
       console.error("Non c'è il post");
-    }
-  }
-
-  getAuthor() {
-    if (this.user) {
-      this.author = this.user.name.split(' ')[0];
     }
   }
 
@@ -42,5 +39,20 @@ export class CardComponent implements OnInit {
       }
     } else console.error('Nome utente mancante');
   }
-  showDetails() {}
+  showDetails(data: Post) {
+    const dialogRef = this.matDialog.open(PostDialogComponent);
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(`Dialog result: ${result}`);
+    });
+  }
+  // const config: MatDialogConfig = {
+  //   height: '100%',
+  //   width: '100%',
+  //   data,
+  //   autoFocus: false,
+  // };
+  // this.matDialog.open(PostDialogComponent, config);
+  // }
+  openUserDetail(user: User) {}
 }

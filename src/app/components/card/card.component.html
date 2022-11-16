@@ -1,6 +1,6 @@
-<div class="card-container">
+<div class="card-container" *ngIf="post">
   <div class="button-container">
-    <button (click)="showDetails()" class="button">
+    <button (click)="showDetails(post)" class="button">
       {{ userInitials }}
     </button>
   </div>
@@ -10,7 +10,8 @@
     </div>
     <div class="author">
       <p>
-        pubblicato da: <span>{{ author }}</span>
+        pubblicato da:
+        <span (click)="openUserDetail(user)">{{ author }}</span>
       </p>
     </div>
   </div>

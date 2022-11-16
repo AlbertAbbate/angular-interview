@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { CardModule } from './components/card/card.module';
 import { TableModule } from './components/table/table.module';
+import { MatDialogModule } from '@angular/material/dialog';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   imports: [
@@ -14,6 +16,8 @@ import { TableModule } from './components/table/table.module';
     HttpClientModule,
     CardModule,
     TableModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
