@@ -30,10 +30,13 @@
   border-radius: 5px;
   background-color: red;
   color: white;
-  font-size: 1.1rem;
+  padding: 0;
+  font-size: 1.3rem;
   border: none;
 }
-
+.author {
+  font-size: 0.75rem;
+}
 p span {
   color: red;
   cursor: pointer;

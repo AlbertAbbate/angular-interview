@@ -10,7 +10,7 @@ import { PostService } from '../../services/post.service';
 })
 export class TableComponent implements OnInit {
   isDetailOpened: boolean = false;
-  posts: Post[];
+  posts?: Post[];
   selectedPost?: Post;
   selectedPostUser?: User;
   constructor(private postService: PostService) {}

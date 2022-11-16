@@ -23,7 +23,7 @@ export class CardComponent implements OnInit {
       this.userService.getUser(this.post.userId).subscribe((user) => {
         this.user = user;
         this.getUserInitials(this.user.name);
-        this.author = this.user.name;
+        this.author = this.user.username;
       });
     } else {
       console.error("Non c'è il post");
@@ -42,8 +42,7 @@ export class CardComponent implements OnInit {
   showDetails(data: Post) {
     this.buttonEmitter.emit({ post: data, user: this.user });
     // const dialogRef = this.matDialog.open(PostDialogComponent);
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log(`Dialog result: ${result}`);
+    // dialogRef.afterClosed().subscribe(() => {
     // });
 
     // return dialogRef.afterClosed();

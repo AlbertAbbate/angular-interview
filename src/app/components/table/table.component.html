@@ -6,7 +6,7 @@
     [user]="selectedPostUser"
   ></app-post-dialog>
 
-  <div class="table-container">
+  <div class="table-container" *ngIf="posts">
     <div class="row" *ngFor="let post of posts">
       <app-card [post]="post" (buttonEmitter)="handleButton($event)"></app-card>
     </div>

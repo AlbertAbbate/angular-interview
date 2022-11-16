@@ -6,7 +6,7 @@ import { Post } from '../interfaces/post.interface';
 @Injectable({ providedIn: 'root' })
 export class PostService {
   private postsUrl = 'https://jsonplaceholder.typicode.com/posts';
-  private singlePostUrl = 'https://jsonplaceholder.typicode.com/posts/:id';
+  private singlePostUrl = 'https://jsonplaceholder.typicode.com/posts/';
 
   constructor(private http: HttpClient) {}
 
