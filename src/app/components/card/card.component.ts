@@ -1,9 +1,8 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+
 import { Post } from '../../interfaces/post.interface';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
-import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 
 @Component({
   selector: 'app-card',
@@ -12,11 +11,12 @@ import { PostDialogComponent } from '../post-dialog/post-dialog.component';
 })
 export class CardComponent implements OnInit {
   @Input() post: Post;
+  @Output() buttonEmitter = new EventEmitter<{ post: Post; user: User }>();
   user?: User;
   userInitials?: string;
   author?: string;
 
-  constructor(private userService: UserService, private matDialog: MatDialog) {}
+  constructor(private userService: UserService) {}
 
   ngOnInit() {
     if (this.post) {
@@ -40,19 +40,14 @@ export class CardComponent implements OnInit {
     } else console.error('Nome utente mancante');
   }
   showDetails(data: Post) {
-    const dialogRef = this.matDialog.open(PostDialogComponent);
+    this.buttonEmitter.emit({ post: data, user: this.user });
+    // const dialogRef = this.matDialog.open(PostDialogComponent);
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log(`Dialog result: ${result}`);
+    // });
 
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log(`Dialog result: ${result}`);
-    });
+    // return dialogRef.afterClosed();
   }
-  // const config: MatDialogConfig = {
-  //   height: '100%',
-  //   width: '100%',
-  //   data,
-  //   autoFocus: false,
-  // };
-  // this.matDialog.open(PostDialogComponent, config);
-  // }
+
   openUserDetail(user: User) {}
 }

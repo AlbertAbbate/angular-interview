@@ -1,1 +1,8 @@
-<div class="popup-container">CIAO CIAO CIAO</div>
+<div class="popup-container">
+  <p class="overtitle">
+    post pubblicato da: {{ user.name }} alias <span> {{ user.username }}</span>
+  </p>
+  <p class="title">{{ post.title }}</p>
+  <p class="body">{{ post.body }}</p>
+  <button class="button-close" (click)="onClose()">Chiudi</button>
+</div>

@@ -3,8 +3,10 @@ import { CommonModule } from '@angular/common';
 import { TableComponent } from './table.component';
 import { CardModule } from '../card/card.module';
 
+import { PostDialogModule } from '../post-dialog/post-dialog.module';
+
 @NgModule({
-  imports: [CommonModule, CardModule],
+  imports: [CommonModule, CardModule, PostDialogModule],
   declarations: [TableComponent],
   exports: [TableComponent],
 })
