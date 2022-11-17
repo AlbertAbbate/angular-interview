@@ -2,4 +2,29 @@
   width: 100%;
   height: 100%;
   text-align: center;
+  /* display: flex; */
+}
+.card-container {
+  width: 400px;
+  margin-top: 7px;
+  padding: 6px;
+  border: 1px solid #eeeeee;
+}
+.posts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+h4 {
+  color: red;
+}
+@media only screen and (min-width: 800px) {
+  .posts {
+    justify-items: center;
+    row-gap: 5px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
 }

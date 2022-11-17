@@ -10,9 +10,6 @@
   align-items: center;
   justify-content: center;
 }
-.button:hover {
-  transform: scale(1.2);
-}
 .text-container {
   width: 80%;
   display: flex;
@@ -35,6 +32,9 @@
   padding: 0;
   font-size: 1.3rem;
   border: none;
+}
+.button:hover {
+  transform: scale(1.2);
 }
 .author {
   font-size: 0.75rem;
