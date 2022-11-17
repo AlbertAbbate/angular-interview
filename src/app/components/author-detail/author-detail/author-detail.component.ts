@@ -21,12 +21,18 @@ export class AuthorDetailComponent implements OnInit {
     private userService: UserService,
     private postService: PostService
   ) {
-    this.authorId = this.router.getCurrentNavigation().extras.state.id;
+    if (this.router.getCurrentNavigation().extras.state.id) {
+      this.authorId = this.router.getCurrentNavigation().extras.state.id;
+    } else console.error("Non è stato caricato l'id");
   }
 
   ngOnInit() {
-    this.userService.getUser(this.authorId).subscribe((author) => {
-      this.author = author;
-    });
+    if (this.authorId) {
+      this.userService.getUser(this.authorId).subscribe((author) => {
+        this.author = author;
+      });
+    } else {
+      console.error("Manca l'id");
+    }
   }
 }

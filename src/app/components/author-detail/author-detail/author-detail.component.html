@@ -1,15 +1,19 @@
-<div>author-detail works!</div>
-
-<div class="container" *ngIf="author">
+<div *ngIf="author" class="container">
   <div class="info">
     <div class="personal-info">
-      <p>ciao</p>
-      <p></p>
-      <p></p>
-      <p></p>
-      <p></p>
+      <h2>Informazioni personali</h2>
+      <p>Nome: {{ author.name }}</p>
+      <p>Alias: {{ author.username }}</p>
+      <p>Email: {{ author.email }}</p>
+      <p>Telefono: {{ author.phone }}</p>
+      <p>Website: {{ author.website }}</p>
     </div>
-    <div class="company-info"></div>
+    <div class="company-info">
+      <h2>Informazioni sull'azienda</h2>
+      <p>Nome azienda: {{ author.company.name }}</p>
+      <p>Catchphrase: {{ author.company.catchPhrase }}</p>
+      <p>BS: {{ author.company.bs }}</p>
+    </div>
     <div class="address"></div>
   </div>
   <div class="posts"></div>

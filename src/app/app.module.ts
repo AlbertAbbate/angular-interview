@@ -15,6 +15,7 @@ import { NavbarModule } from './components/navbar/navbar.module';
 import { AuthorsComponent } from './components/authors/authors/authors.component';
 import { AuthorsModule } from './components/authors/authors.module';
 import { AuthorDetailComponent } from './components/author-detail/author-detail/author-detail.component';
+import { AuthorDetailModule } from './components/author-detail/author-detail.module';
 
 const appRoutes: Routes = [
   {
@@ -47,6 +48,7 @@ const appRoutes: Routes = [
     BrowserAnimationsModule,
     NavbarModule,
     AuthorsModule,
+    AuthorDetailModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
