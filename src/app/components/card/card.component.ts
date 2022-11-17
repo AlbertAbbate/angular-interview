@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { Post } from '../../interfaces/post.interface';
 import { User } from '../../interfaces/user.interface';
 import { UserService } from '../../services/user.service';
@@ -15,7 +16,7 @@ export class CardComponent implements OnInit {
   userInitials?: string;
   author?: string;
 
-  constructor(private userService: UserService) {}
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
     if (this.post) {
@@ -47,5 +48,9 @@ export class CardComponent implements OnInit {
     // return dialogRef.afterClosed();
   }
 
-  openUserDetail(user: User) {}
+  openUserDetail(user: User) {
+    this.router.navigateByUrl('/authors/' + user.id, {
+      state: { id: user.id },
+    });
+  }
 }

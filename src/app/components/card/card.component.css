@@ -10,7 +10,9 @@
   align-items: center;
   justify-content: center;
 }
-
+.button:hover {
+  transform: scale(1.2);
+}
 .text-container {
   width: 80%;
   display: flex;
