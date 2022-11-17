@@ -33,3 +33,7 @@
 .overtitle span {
   color: red;
 }
+.overtitle-container {
+  text-align: left;
+  border-bottom: 1px solid #eeeeee;
+}

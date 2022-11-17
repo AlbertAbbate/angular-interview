@@ -24,6 +24,7 @@ export class TableComponent implements OnInit {
     this.selectedPost = event.post;
     this.isDetailOpened = !this.isDetailOpened;
   }
+
   handleClose(event: boolean) {
     this.isDetailOpened = !this.isDetailOpened;
   }

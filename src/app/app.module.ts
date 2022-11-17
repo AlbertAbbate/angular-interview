@@ -8,9 +8,35 @@ import { CardModule } from './components/card/card.module';
 import { TableModule } from './components/table/table.module';
 import { MatDialogModule } from '@angular/material/dialog';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Routes, RouterModule } from '@angular/router';
+import { TableComponent } from './components/table/table.component';
+
+import { NavbarModule } from './components/navbar/navbar.module';
+import { NavbarComponent } from './components/navbar/navbar/navbar.component';
+import { AuthorsComponent } from './components/authors/authors/authors.component';
+import { SingleAuthorModule } from './components/single-author/single-author.module';
+
+const appRoutes: Routes = [
+  {
+    path: '',
+    component: NavbarComponent,
+  },
+  {
+    path: 'posts',
+    component: TableComponent,
+  },
+  {
+    path: 'authors',
+    component: AuthorsComponent,
+  },
+  // {
+  //   path: 'authors/:id',
+  // },
+];
 
 @NgModule({
   imports: [
+    RouterModule.forRoot(appRoutes),
     BrowserModule,
     FormsModule,
     HttpClientModule,
@@ -18,6 +44,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     TableModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    NavbarModule,
+    SingleAuthorModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
