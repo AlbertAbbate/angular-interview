@@ -12,7 +12,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { TableComponent } from './components/table/table.component';
 
 import { NavbarModule } from './components/navbar/navbar.module';
-import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { AuthorsComponent } from './components/authors/authors/authors.component';
 import { AuthorsModule } from './components/authors/authors.module';
 import { AuthorDetailComponent } from './components/author-detail/author-detail/author-detail.component';
@@ -20,7 +19,7 @@ import { AuthorDetailComponent } from './components/author-detail/author-detail/
 const appRoutes: Routes = [
   {
     path: '',
-    component: NavbarComponent,
+    component: TableComponent,
   },
   {
     path: 'posts',

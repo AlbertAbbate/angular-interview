@@ -20,6 +20,6 @@ export class SingleAuthorComponent implements OnInit {
   }
 
   navigate() {
-    this.router.navigateByUrl('/authors/${{author.id}}');
+    this.router.navigateByUrl('/authors/' + this.author.id);
   }
 }
