@@ -1,4 +1,29 @@
 .card-container {
   display: flex;
   flex-direction: row;
+  border: 1px solid #eeeeee;
+  margin-top: 10px;
+  padding: 8px;
+  justify-content: space-between;
+}
+p span {
+  color: red;
+}
+.left-content {
+  width: 70%;
+}
+.right-content {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.navigate {
+  background-color: red;
+  border: none;
+  padding: 8px;
+  color: white;
+}
+.navigate:hover {
+  cursor: pointer;
 }

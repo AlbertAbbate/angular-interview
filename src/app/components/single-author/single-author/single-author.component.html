@@ -1,9 +1,20 @@
-<div class="card-container">
+<div class="card-container" *ngIf="author">
   <div class="left-content">
-    <p class="name">Nome: {{ author.name }}, alias {{ author.username }}</p>
-    <p class="address">Indirizzo: {{ author.address.street }}</p>
-    <p class="phone">Num: {{ author.phone }}</p>
-    <p class="webiste">Webiste: {{ author.website }}</p>
+    <p class="name">
+      Autore: <span>{{ author.name }}</span
+      >, alias <span>{{ author.username }}</span>
+    </p>
+    <p class="address">
+      Indirizzo: <span>{{ author.address.street }}</span>
+    </p>
+    <p class="phone">
+      Num: <span>{{ author.phone }}</span>
+    </p>
+    <p class="webiste">
+      Webiste: <span>{{ author.website }}</span>
+    </p>
   </div>
-  <div class="right-content"></div>
+  <div class="right-content">
+    <button (click)="navigate()" class="navigate">Tutti i dettagli</button>
+  </div>
 </div>

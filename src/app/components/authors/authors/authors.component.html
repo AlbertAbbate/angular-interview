@@ -1,3 +1,6 @@
-<div class="container">
-  <app-single-author></app-single-author>
+<div class="container" *ngIf="users">
+  <app-single-author
+    *ngFor="let author of users"
+    [author]="author"
+  ></app-single-author>
 </div>

@@ -14,7 +14,8 @@ import { TableComponent } from './components/table/table.component';
 import { NavbarModule } from './components/navbar/navbar.module';
 import { NavbarComponent } from './components/navbar/navbar/navbar.component';
 import { AuthorsComponent } from './components/authors/authors/authors.component';
-import { SingleAuthorModule } from './components/single-author/single-author.module';
+import { AuthorsModule } from './components/authors/authors.module';
+import { AuthorDetailComponent } from './components/author-detail/author-detail/author-detail.component';
 
 const appRoutes: Routes = [
   {
@@ -29,9 +30,10 @@ const appRoutes: Routes = [
     path: 'authors',
     component: AuthorsComponent,
   },
-  // {
-  //   path: 'authors/:id',
-  // },
+  {
+    path: 'authors/:id',
+    component: AuthorDetailComponent,
+  },
 ];
 
 @NgModule({
@@ -45,7 +47,7 @@ const appRoutes: Routes = [
     MatDialogModule,
     BrowserAnimationsModule,
     NavbarModule,
-    SingleAuthorModule,
+    AuthorsModule,
   ],
   declarations: [AppComponent],
   bootstrap: [AppComponent],
