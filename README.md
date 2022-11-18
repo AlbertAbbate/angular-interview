@@ -4,12 +4,12 @@ Realizzare una piccola applicazione che mostri una lista di Post e il dettaglio 
 
 ## Specifiche
 
-- nel file `mock-data/posts.mock.ts` è presente un esempio di lista di post (`Post[]`)
+<!-- - nel file `mock-data/posts.mock.ts` è presente un esempio di lista di post (`Post[]`)
 - l'interfaccia `Post` è presente in `interfaces/post.interface.ts`
 - nel file `mock-data/users.mock.ts` è presente un esempio di lista di user (`User[]`)
 - l'interfaccia `User` è presente in `interfaces/user.interface.ts`
 - a ogni `user` possono corrispondere più `post`.
-- per associare un post a un utente fare riferimento alla chiave `userId` di `Post` (che corrisponde alla chiave `id` di `User`).
+- per associare un post a un utente fare riferimento alla chiave `userId` di `Post` (che corrisponde alla chiave `id` di `User`). -->
 
 ## Design
 
@@ -46,8 +46,8 @@ Saranno apprezzate (ma non necessarie) le seguenti funzionalità:
 - filtri di ricerca nella lista (lato client);
 <!-- - gestione routing;
 - dettaglio dell'utente in una rotta specifica; -->
-<!-- - dettaglio del post in una rotta specifica oppure mostrata in sovrapposizione alla lista (ad esempio, come una modale); -->
-- funzionalità responsive (adattamento della view a diversi breakpoints);
+  <!-- - dettaglio del post in una rotta specifica oppure mostrata in sovrapposizione alla lista (ad esempio, come una modale); -->
+  <!-- - funzionalità responsive (adattamento della view a diversi breakpoints); -->
 - funzionalità di cambio tema (ad esempio rendere variabile il colore "primario" di quadrato/testo/link etc...);
 - animazioni o transizioni;
 - gestione della lista in doppia visualizzazione (semplice lista e card affiancate);

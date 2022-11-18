@@ -1,4 +1,4 @@
-<main>
+<div>
   <app-post-dialog
     (closeEmitter)="handleClose($event)"
     *ngIf="isDetailOpened"
@@ -7,8 +7,11 @@
   ></app-post-dialog>
 
   <div class="table-container" *ngIf="posts">
+    <div class="search">
+      <app-search></app-search>
+    </div>
     <div class="row" *ngFor="let post of posts">
       <app-card [post]="post" (buttonEmitter)="handleButton($event)"></app-card>
     </div>
   </div>
-</main>
+</div>
