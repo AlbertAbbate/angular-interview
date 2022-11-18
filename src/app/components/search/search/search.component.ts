@@ -16,6 +16,7 @@ import {
   tap,
 } from 'rxjs/operators';
 import { fromEvent } from 'rxjs';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -25,7 +26,8 @@ export class SearchComponent implements OnInit, AfterViewInit {
   @ViewChild('input', { static: true }) input: ElementRef;
   constructor(
     private postService: PostService,
-    private userService: UserService
+    private userService: UserService,
+    private router: Router
   ) {}
   searchString?: string;
   posts?: Post[];
@@ -43,7 +45,10 @@ export class SearchComponent implements OnInit, AfterViewInit {
         debounceTime(800),
         distinctUntilChanged(),
         tap((event: KeyboardEvent) => {
-          this.searchString = this.input.nativeElement.value;
+          this.searchString =
+            this.input.nativeElement.value != ''
+              ? this.input.nativeElement.value
+              : undefined;
           this.filterUsers();
         })
       )
@@ -51,9 +56,16 @@ export class SearchComponent implements OnInit, AfterViewInit {
   }
 
   filterUsers() {
-    this.searchResults = this.users.filter((user) =>
-      user.username.toUpperCase().includes(this.searchString.toUpperCase())
-    );
-    console.log(this.searchResults);
+    if (this.searchString) {
+      this.searchResults = this.users.filter((user) =>
+        user.username.toUpperCase().includes(this.searchString.toUpperCase())
+      );
+    } else this.searchResults = [];
+  }
+
+  navigateToDetail(userId: number) {
+    this.router.navigateByUrl('/authors/' + userId, {
+      state: { id: userId },
+    });
   }
 }

@@ -1,8 +1,14 @@
 <div class="search-container">
-  <input #input placeholder="Cerca per username..." type="text" />
+  <div class="search-wrap">
+    <input #input placeholder="Cerca per username..." type="text" />
+  </div>
+
   <div class="results" *ngIf="searchResults.length">
-    
-
-
+    <div class="user-container" *ngFor="let user of searchResults">
+      <p>{{ user.name }} alias {{ user.username }}</p>
+      <button class="button" (click)="navigateToDetail(user.id)">
+        Mostra dettagli
+      </button>
+    </div>
   </div>
 </div>
